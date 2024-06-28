@@ -46,10 +46,13 @@ if(Test-Path -Path $file){
    $Data=Get-Content -Path $file
    if($Data.Count -lt 2){
     Write-Output "This file contains less than 2 lines"
+    break
    }elseif ($Data.Count -lt 7) {
     Write-Output "This file contains less than 7 lines but more than 1 line"
+    break
    }else{
     Write-Output "This file contains 7 or more lines"
+    break
    }
 }else{
     Write-Output "File `"$file`" doesn't exist"
